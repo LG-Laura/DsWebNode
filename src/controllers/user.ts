@@ -67,6 +67,10 @@ export const loginUser = async (req: Request, res: Response) => {
         const token = jwt.sign({
             email: email
         }, process.env.SECRET_KEY || 'probando123')
+        //tambien se puede agregar el tiempo de expiracion del token
+    //}, process.env.SECRET_KEY || 'probando123', {
+    //expiresIn: '10000'
+    //});
 
         res.json(token);
 
